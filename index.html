@@ -48,14 +48,10 @@
           <button class="subscribe-btn" onclick="showPopup()">اشترك</button>
 
           <div class="note">
-<<<<<<< HEAD
             <p>
               مرحبا بك في خدمة زيتون <br />
               سعر الخدمة 600 ج.س / يوم (شاملة الضريبة) لالغاء الاشتراك أرسل C1
               الى 5263
-=======
-            <p>مرحبا بك في خدمة زيتون <br/> سعر الخدمة 600 ج.س / يوم (شاملة الضريبة) لالغاء الاشتراك أرسل C1 الى 5263
->>>>>>> 4d65bbb31abf5fb362f78744fc897c5bb4fd9ba0
             </p>
           </div>
         </div>
@@ -103,9 +99,8 @@
           document.getElementById("popup").classList.add("show");
           return;
         }
-
         if (!/^09\d{8}$/.test(phoneInput)) {
-          error.textContent = "رقم الهاتف غير صحيح. يجب أن يبدأ بـ 09 ويتكون من 10 أرقام.";
+          error.textContent = "الرقم يجب أن يبدأ ب09 ويتكون من 10 أرقام.";
           return;
         }
 
