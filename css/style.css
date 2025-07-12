@@ -45,6 +45,8 @@ body.shadow::after {
   width: 100%;
   height: 100%;
   background-color: rgba(51, 51, 51, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
   z-index: 0;
 }
 body main {
@@ -71,7 +73,8 @@ body main {
   bottom: 0;
   left: 0;
   padding: 20px;
-  background-color: #fbc02d;
+  background-color: #43a047;
+  color: #fff;
   border: none;
   font-weight: bold;
   cursor: pointer;
@@ -79,49 +82,35 @@ body main {
 
 /* end popup button */
 /* start buttons */
-.subscribe-btn,
-.cancel-btn {
-  width: 100%;
-  padding: 14px;
-  font-size: 17px;
+.subscribe-btn {
+  font-size: 18px;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+  width: 100%;
   cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   font-weight: bold;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-box-shadow: 0 6px 14px rgba(76, 175, 80, 0.4);
+          box-shadow: 0 6px 14px rgba(76, 175, 80, 0.4);
 }
 
 .subscribe-btn {
-  background-color: #fbc02d;
-  color: #000;
+  background: -webkit-gradient(linear, left top, right top, from(#43a047), to(#66bb6a));
+  background: linear-gradient(90deg, #43a047, #66bb6a);
+  color: #fff;
 }
 .subscribe-btn:hover {
-  background-color: #f9a825;
-}
-
-.cancel-btn {
-  background-color: #ddd;
-  color: #444;
-}
-.cancel-btn:hover {
-  background-color: #bbb;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  background: -webkit-gradient(linear, left top, right top, from(#388e3c), to(#43a047));
+  background: linear-gradient(90deg, #388e3c, #43a047);
+  -webkit-box-shadow: 0 6px 14px rgba(76, 175, 80, 0.6);
+          box-shadow: 0 6px 14px rgba(76, 175, 80, 0.6);
 }
 
 /* end buttons */
-/* start confirm button */
-.confirm button {
-  padding: 10px;
-  width: 150px;
-  border: none;
-  outline: none;
-  background-color: #4caf50;
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* end confirm button */
 /* start header */
 header {
   width: 100%;
@@ -180,9 +169,6 @@ header .container .logo img {
 /* end content */
 /* start card */
 .card {
-  background-color: white;
-  padding: 30px 25px;
-  border-radius: 16px;
   -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
           box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   width: 100%;
@@ -199,7 +185,13 @@ header .container .logo img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 350px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 340px;
+  margin: auto;
   text-align: center;
   animation: fadeIn 1s ease;
   -webkit-animation: fadeIn 1s ease;
@@ -243,12 +235,12 @@ header .container .logo img {
 .card .container .input-field {
   width: 100%;
   text-align: right;
-  padding: 14px;
+  padding: 15px;
   font-size: 16px;
   border: 1px solid #ccc;
   outline: none;
   border-radius: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   caret-color: #f9d976;
@@ -294,95 +286,36 @@ header .container .logo img {
   padding: 30px 20px;
   text-align: center;
   z-index: 1000;
-  -webkit-transition: bottom 0.5s ease;
-  transition: bottom 0.5s ease;
+  transition: bottom 0.3s ease;
+  -webkit-transition: bottom 0.3s ease;
+  -moz-transition: bottom 0.3s ease;
+  -ms-transition: bottom 0.3s ease;
+  -o-transition: bottom 0.3s ease;
 }
 .popup.show {
   bottom: 0;
-  min-height: 50vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  min-height: 80vh;
 }
 .popup h3 {
-  color: #4caf50;
+  color: #2e7d32;
   font-size: 1.5rem;
   margin-bottom: 15px;
-}
-.popup.cancel h3 {
-  color: #e53935;
-  font-size: 1.5rem;
 }
 .popup p {
   color: #555;
   margin-bottom: 20px;
   font-size: 1.2rem;
 }
+.popup .animation {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+}
 
 /* end popup */
-/* start confirm popup */
-.confirm {
-  opacity: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background-color: white;
-  width: 350px;
-  height: 300px;
-  text-align: center;
-  padding: 15px;
-  border-radius: 15px;
-  -webkit-border-radius: 15px;
-  -moz-border-radius: 15px;
-  -ms-border-radius: 15px;
-  -o-border-radius: 15px;
-  transition: 0.3s linear;
-  -webkit-transition: 0.3s linear;
-  -moz-transition: 0.3s linear;
-  -ms-transition: 0.3s linear;
-  -o-transition: 0.3s linear;
-  z-index: -1;
-}
-.confirm.active {
-  opacity: 1;
-  z-index: 1;
-}
-.confirm .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px;
-  color: #333;
-}
-
-/* end confirm popup */
 .background img {
   position: absolute;
   opacity: 0.1;
