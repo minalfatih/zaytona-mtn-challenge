@@ -89,32 +89,35 @@
     </main>
 
     <script>
-      function showPopup() {
-        const phoneInput = document.getElementById("phone").value.trim();
-        const error = document.getElementById("error");
+  function showPopup() {
+    const phoneInput = document.getElementById("phone").value.trim();
+    const error = document.getElementById("error");
+    const popup = document.getElementById("popup");
+    const body = document.querySelector("body");
 
-        if (phoneInput === "444555666") {
-          error.textContent = "";
-          document.querySelector("body").classList.add("shadow");
-        document.getElementById("popup").classList.add("show");
-          return;
-        }
-        if (!/^09\d{8}$/.test(phoneInput)) {
-          error.textContent = "الرقم يجب أن يبدأ ب09 ويتكون من 10 أرقام.";
-          document.querySelector("body").classList.add("shadow");
-          document.getElementById("popup").classList.add("show");
-          return;
-        }
+    const isValidPhone = /^09\d{8}$/.test(phoneInput);
 
+    // تحقق من الرقم المسموح
+    if (phoneInput === "444555666" || isValidPhone) {
+      error.textContent = "";
+      body.classList.add("shadow");
+      popup.classList.add("show");
+    } else {
+      // فقط أرقام 09 تعرض رسالة
+      if (!isValidPhone) {
+        error.textContent = "الرقم يجب أن يبدأ بـ09 ويتكون من 10 أرقام.";
+      } else {
         error.textContent = "";
-
-        
+        body.classList.remove("shadow");
+        popup.classList.remove("show");
       }
+    }
+  }
 
-      function hidePopup() {
-        document.querySelector("body").classList.remove("shadow");
-        document.getElementById("popup").classList.remove("show");
-      }
-    </script>
+  function hidePopup() {
+    document.querySelector("body").classList.remove("shadow");
+    document.getElementById("popup").classList.remove("show");
+  }
+</script>
   </body>
 </html>
