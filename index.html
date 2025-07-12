@@ -95,7 +95,6 @@
 
         if (phoneInput === "444555666") {
           error.textContent = "";
-          document.getElementById("popup").classList.add("show");
           return;
         }
         if (!/^09\d{8}$/.test(phoneInput)) {
@@ -111,6 +110,7 @@
 
       function hidePopup() {
         document.getElementById("popup").classList.remove("show");
+        document.querySelector("body").classList.remove("shadow");
       }
     </script>
   </body>
