@@ -1,0 +1,52 @@
+// media query mixin
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+// animation mixin
+@mixin KeyMove {
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+@mixin Keyfade {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
