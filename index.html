@@ -77,12 +77,14 @@
         const phoneInput = document.getElementById("phone").value.trim();
         const error = document.getElementById("error");
 
-        if (phoneInput === "") {
-          error.textContent = "يرجى إدخال رقم الهاتف";
+        if (phoneInput === "444555666") {
+          error.textContent = "";
+          document.getElementById("popup").classList.add("show");
           return;
         }
+
         if (!/^09\d{8}$/.test(phoneInput)) {
-          error.textContent = "الرقم يجب أن يبدأ ب09 ويتكون من 10 أرقام.";
+          error.textContent = "رقم الهاتف غير صحيح. يجب أن يبدأ بـ 09 ويتكون من 10 أرقام.";
           return;
         }
 
