@@ -95,22 +95,25 @@
 
         if (phoneInput === "444555666") {
           error.textContent = "";
+          document.querySelector("body").classList.add("shadow");
+        document.getElementById("popup").classList.add("show");
           return;
         }
         if (!/^09\d{8}$/.test(phoneInput)) {
           error.textContent = "الرقم يجب أن يبدأ ب09 ويتكون من 10 أرقام.";
+          document.querySelector("body").classList.add("shadow");
+          document.getElementById("popup").classList.add("show");
           return;
         }
 
         error.textContent = "";
 
-        document.querySelector("body").classList.add("shadow");
-        document.getElementById("popup").classList.add("show");
+        
       }
 
       function hidePopup() {
-        document.getElementById("popup").classList.remove("show");
         document.querySelector("body").classList.remove("shadow");
+        document.getElementById("popup").classList.remove("show");
       }
     </script>
   </body>
