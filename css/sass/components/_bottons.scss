@@ -17,6 +17,7 @@
 /* end popup button */
 
 /* start buttons */
+<<<<<<< HEAD
 .subscribe-btn {
   font-size: 18px;
   padding: 12px;
@@ -27,14 +28,41 @@
   transition: all 0.3s ease;
   font-weight: bold;
   box-shadow: 0 6px 14px rgba(76, 175, 80, 0.4);
+=======
+.subscribe-btn,
+.cancel-btn {
+  background: linear-gradient(90deg, #ffa726, #fb8c00);
+    color: white;
+    font-size: 18px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(251, 140, 0, 0.4);
+>>>>>>> 4d65bbb31abf5fb362f78744fc897c5bb4fd9ba0
 }
 .subscribe-btn {
   background: linear-gradient(90deg, #43a047, #66bb6a);
   color: #fff;
   &:hover {
     transform: scale(1.05);
+<<<<<<< HEAD
     background: linear-gradient(90deg, #388e3c, #43a047);
     box-shadow: 0 6px 14px rgba(76, 175, 80, 0.6);
+=======
+    background: linear-gradient(90deg, #fb8c00, #ffa726);
+    box-shadow: 0 6px 14px rgba(251, 140, 0, 0.6);
+  }
+}
+.cancel-btn {
+  background-color: #ddd;
+  color: #444;
+  &:hover {
+    background-color: #bbb;
+>>>>>>> 4d65bbb31abf5fb362f78744fc897c5bb4fd9ba0
   }
 }
 /* end buttons */
